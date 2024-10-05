@@ -1,0 +1,2178 @@
+{
+    "type": "FeatureCollection",
+    "context": {
+        "limit": 10,
+        "matched": 276,
+        "returned": 10
+    },
+    "features": [
+        {
+            "id": "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212",
+            "bbox": [
+                -180.0,
+                -90.0,
+                180.0,
+                90.0
+            ],
+            "type": "Feature",
+            "links": [
+                {
+                    "rel": "collection",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "parent",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "root",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/"
+                },
+                {
+                    "rel": "self",
+                    "type": "application/geo+json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212"
+                },
+                {
+                    "title": "Map of Item",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "type": "text/html"
+                }
+            ],
+            "assets": {
+                "co2-emissions": {
+                    "href": "s3://ghgc-data-store/odiac-ffco2-monthgrid-v2023/odiac2023_1km_excl_intl_202212.tif",
+                    "type": "image/tiff; application=geotiff",
+                    "roles": [
+                        "data",
+                        "layer"
+                    ],
+                    "title": "Fossil Fuel CO\u2082 Emissions",
+                    "proj:bbox": [
+                        -180.0,
+                        -90.0,
+                        180.0,
+                        90.0
+                    ],
+                    "proj:epsg": 4326,
+                    "proj:wkt2": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+                    "proj:shape": [
+                        21600,
+                        43200
+                    ],
+                    "description": "Model-estimated monthly, 1 km resolution CO\u2082 emissions from fossil fuel combustion, cement production and gas flaring created using space-based nighttime light data and individual power plant emission/location profiles.",
+                    "raster:bands": [
+                        {
+                            "scale": 1.0,
+                            "nodata": -9999.0,
+                            "offset": 0.0,
+                            "sampling": "area",
+                            "data_type": "float32",
+                            "histogram": {
+                                "max": 31415.447265625,
+                                "min": -675.1028442382812,
+                                "count": 11,
+                                "buckets": [
+                                    14870,
+                                    14,
+                                    1,
+                                    0,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ]
+                            },
+                            "statistics": {
+                                "mean": 38.57990192785652,
+                                "stddev": 332.3921410156093,
+                                "maximum": 31415.447265625,
+                                "minimum": -675.1028442382812,
+                                "valid_percent": 2.8394699096679688
+                            }
+                        }
+                    ],
+                    "proj:geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    -90.0
+                                ]
+                            ]
+                        ]
+                    },
+                    "proj:projjson": {
+                        "id": {
+                            "code": 4326,
+                            "authority": "EPSG"
+                        },
+                        "name": "WGS 84",
+                        "type": "GeographicCRS",
+                        "datum": {
+                            "name": "World Geodetic System 1984",
+                            "type": "GeodeticReferenceFrame",
+                            "ellipsoid": {
+                                "name": "WGS 84",
+                                "semi_major_axis": 6378137,
+                                "inverse_flattening": 298.257223563
+                            }
+                        },
+                        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+                        "coordinate_system": {
+                            "axis": [
+                                {
+                                    "name": "Geodetic latitude",
+                                    "unit": "degree",
+                                    "direction": "north",
+                                    "abbreviation": "Lat"
+                                },
+                                {
+                                    "name": "Geodetic longitude",
+                                    "unit": "degree",
+                                    "direction": "east",
+                                    "abbreviation": "Lon"
+                                }
+                            ],
+                            "subtype": "ellipsoidal"
+                        }
+                    },
+                    "proj:transform": [
+                        0.008333333333333333,
+                        0.0,
+                        -180.0,
+                        0.0,
+                        -0.008333333333333333,
+                        90.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "rendered_preview": {
+                    "title": "Rendered preview",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202212/preview.png?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "roles": [
+                        "overview"
+                    ],
+                    "type": "image/png"
+                }
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -180,
+                            -90
+                        ],
+                        [
+                            180,
+                            -90
+                        ],
+                        [
+                            180,
+                            90
+                        ],
+                        [
+                            -180,
+                            90
+                        ],
+                        [
+                            -180,
+                            -90
+                        ]
+                    ]
+                ]
+            },
+            "collection": "odiac-ffco2-monthgrid-v2023",
+            "properties": {
+                "end_datetime": "2022-12-31T00:00:00+00:00",
+                "start_datetime": "2022-12-01T00:00:00+00:00"
+            },
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ]
+        },
+        {
+            "id": "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202211",
+            "bbox": [
+                -180.0,
+                -90.0,
+                180.0,
+                90.0
+            ],
+            "type": "Feature",
+            "links": [
+                {
+                    "rel": "collection",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "parent",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "root",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/"
+                },
+                {
+                    "rel": "self",
+                    "type": "application/geo+json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202211"
+                },
+                {
+                    "title": "Map of Item",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202211/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "type": "text/html"
+                }
+            ],
+            "assets": {
+                "co2-emissions": {
+                    "href": "s3://ghgc-data-store/odiac-ffco2-monthgrid-v2023/odiac2023_1km_excl_intl_202211.tif",
+                    "type": "image/tiff; application=geotiff",
+                    "roles": [
+                        "data",
+                        "layer"
+                    ],
+                    "title": "Fossil Fuel CO\u2082 Emissions",
+                    "proj:bbox": [
+                        -180.0,
+                        -90.0,
+                        180.0,
+                        90.0
+                    ],
+                    "proj:epsg": 4326,
+                    "proj:wkt2": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+                    "proj:shape": [
+                        21600,
+                        43200
+                    ],
+                    "description": "Model-estimated monthly, 1 km resolution CO\u2082 emissions from fossil fuel combustion, cement production and gas flaring created using space-based nighttime light data and individual power plant emission/location profiles.",
+                    "raster:bands": [
+                        {
+                            "scale": 1.0,
+                            "nodata": -9999.0,
+                            "offset": 0.0,
+                            "sampling": "area",
+                            "data_type": "float32",
+                            "histogram": {
+                                "max": 31734.998046875,
+                                "min": -682.0047607421875,
+                                "count": 11,
+                                "buckets": [
+                                    14875,
+                                    9,
+                                    1,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ]
+                            },
+                            "statistics": {
+                                "mean": 34.56123001612145,
+                                "stddev": 318.32799324977884,
+                                "maximum": 31734.998046875,
+                                "minimum": -682.0047607421875,
+                                "valid_percent": 2.8394699096679688
+                            }
+                        }
+                    ],
+                    "proj:geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    -90.0
+                                ]
+                            ]
+                        ]
+                    },
+                    "proj:projjson": {
+                        "id": {
+                            "code": 4326,
+                            "authority": "EPSG"
+                        },
+                        "name": "WGS 84",
+                        "type": "GeographicCRS",
+                        "datum": {
+                            "name": "World Geodetic System 1984",
+                            "type": "GeodeticReferenceFrame",
+                            "ellipsoid": {
+                                "name": "WGS 84",
+                                "semi_major_axis": 6378137,
+                                "inverse_flattening": 298.257223563
+                            }
+                        },
+                        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+                        "coordinate_system": {
+                            "axis": [
+                                {
+                                    "name": "Geodetic latitude",
+                                    "unit": "degree",
+                                    "direction": "north",
+                                    "abbreviation": "Lat"
+                                },
+                                {
+                                    "name": "Geodetic longitude",
+                                    "unit": "degree",
+                                    "direction": "east",
+                                    "abbreviation": "Lon"
+                                }
+                            ],
+                            "subtype": "ellipsoidal"
+                        }
+                    },
+                    "proj:transform": [
+                        0.008333333333333333,
+                        0.0,
+                        -180.0,
+                        0.0,
+                        -0.008333333333333333,
+                        90.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "rendered_preview": {
+                    "title": "Rendered preview",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202211/preview.png?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "roles": [
+                        "overview"
+                    ],
+                    "type": "image/png"
+                }
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -180,
+                            -90
+                        ],
+                        [
+                            180,
+                            -90
+                        ],
+                        [
+                            180,
+                            90
+                        ],
+                        [
+                            -180,
+                            90
+                        ],
+                        [
+                            -180,
+                            -90
+                        ]
+                    ]
+                ]
+            },
+            "collection": "odiac-ffco2-monthgrid-v2023",
+            "properties": {
+                "end_datetime": "2022-11-30T00:00:00+00:00",
+                "start_datetime": "2022-11-01T00:00:00+00:00"
+            },
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ]
+        },
+        {
+            "id": "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202210",
+            "bbox": [
+                -180.0,
+                -90.0,
+                180.0,
+                90.0
+            ],
+            "type": "Feature",
+            "links": [
+                {
+                    "rel": "collection",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "parent",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "root",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/"
+                },
+                {
+                    "rel": "self",
+                    "type": "application/geo+json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202210"
+                },
+                {
+                    "title": "Map of Item",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202210/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "type": "text/html"
+                }
+            ],
+            "assets": {
+                "co2-emissions": {
+                    "href": "s3://ghgc-data-store/odiac-ffco2-monthgrid-v2023/odiac2023_1km_excl_intl_202210.tif",
+                    "type": "image/tiff; application=geotiff",
+                    "roles": [
+                        "data",
+                        "layer"
+                    ],
+                    "title": "Fossil Fuel CO\u2082 Emissions",
+                    "proj:bbox": [
+                        -180.0,
+                        -90.0,
+                        180.0,
+                        90.0
+                    ],
+                    "proj:epsg": 4326,
+                    "proj:wkt2": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+                    "proj:shape": [
+                        21600,
+                        43200
+                    ],
+                    "description": "Model-estimated monthly, 1 km resolution CO\u2082 emissions from fossil fuel combustion, cement production and gas flaring created using space-based nighttime light data and individual power plant emission/location profiles.",
+                    "raster:bands": [
+                        {
+                            "scale": 1.0,
+                            "nodata": -9999.0,
+                            "offset": 0.0,
+                            "sampling": "area",
+                            "data_type": "float32",
+                            "histogram": {
+                                "max": 34128.0078125,
+                                "min": -733.4654541015625,
+                                "count": 11,
+                                "buckets": [
+                                    14877,
+                                    7,
+                                    1,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ]
+                            },
+                            "statistics": {
+                                "mean": 33.683188352253644,
+                                "stddev": 328.55445173479933,
+                                "maximum": 34128.0078125,
+                                "minimum": -733.4654541015625,
+                                "valid_percent": 2.8394699096679688
+                            }
+                        }
+                    ],
+                    "proj:geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    -90.0
+                                ]
+                            ]
+                        ]
+                    },
+                    "proj:projjson": {
+                        "id": {
+                            "code": 4326,
+                            "authority": "EPSG"
+                        },
+                        "name": "WGS 84",
+                        "type": "GeographicCRS",
+                        "datum": {
+                            "name": "World Geodetic System 1984",
+                            "type": "GeodeticReferenceFrame",
+                            "ellipsoid": {
+                                "name": "WGS 84",
+                                "semi_major_axis": 6378137,
+                                "inverse_flattening": 298.257223563
+                            }
+                        },
+                        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+                        "coordinate_system": {
+                            "axis": [
+                                {
+                                    "name": "Geodetic latitude",
+                                    "unit": "degree",
+                                    "direction": "north",
+                                    "abbreviation": "Lat"
+                                },
+                                {
+                                    "name": "Geodetic longitude",
+                                    "unit": "degree",
+                                    "direction": "east",
+                                    "abbreviation": "Lon"
+                                }
+                            ],
+                            "subtype": "ellipsoidal"
+                        }
+                    },
+                    "proj:transform": [
+                        0.008333333333333333,
+                        0.0,
+                        -180.0,
+                        0.0,
+                        -0.008333333333333333,
+                        90.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "rendered_preview": {
+                    "title": "Rendered preview",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202210/preview.png?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "roles": [
+                        "overview"
+                    ],
+                    "type": "image/png"
+                }
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -180,
+                            -90
+                        ],
+                        [
+                            180,
+                            -90
+                        ],
+                        [
+                            180,
+                            90
+                        ],
+                        [
+                            -180,
+                            90
+                        ],
+                        [
+                            -180,
+                            -90
+                        ]
+                    ]
+                ]
+            },
+            "collection": "odiac-ffco2-monthgrid-v2023",
+            "properties": {
+                "end_datetime": "2022-10-31T00:00:00+00:00",
+                "start_datetime": "2022-10-01T00:00:00+00:00"
+            },
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ]
+        },
+        {
+            "id": "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202209",
+            "bbox": [
+                -180.0,
+                -90.0,
+                180.0,
+                90.0
+            ],
+            "type": "Feature",
+            "links": [
+                {
+                    "rel": "collection",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "parent",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "root",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/"
+                },
+                {
+                    "rel": "self",
+                    "type": "application/geo+json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202209"
+                },
+                {
+                    "title": "Map of Item",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202209/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "type": "text/html"
+                }
+            ],
+            "assets": {
+                "co2-emissions": {
+                    "href": "s3://ghgc-data-store/odiac-ffco2-monthgrid-v2023/odiac2023_1km_excl_intl_202209.tif",
+                    "type": "image/tiff; application=geotiff",
+                    "roles": [
+                        "data",
+                        "layer"
+                    ],
+                    "title": "Fossil Fuel CO\u2082 Emissions",
+                    "proj:bbox": [
+                        -180.0,
+                        -90.0,
+                        180.0,
+                        90.0
+                    ],
+                    "proj:epsg": 4326,
+                    "proj:wkt2": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+                    "proj:shape": [
+                        21600,
+                        43200
+                    ],
+                    "description": "Model-estimated monthly, 1 km resolution CO\u2082 emissions from fossil fuel combustion, cement production and gas flaring created using space-based nighttime light data and individual power plant emission/location profiles.",
+                    "raster:bands": [
+                        {
+                            "scale": 1.0,
+                            "nodata": -9999.0,
+                            "offset": 0.0,
+                            "sampling": "area",
+                            "data_type": "float32",
+                            "histogram": {
+                                "max": 34403.0390625,
+                                "min": -739.40966796875,
+                                "count": 11,
+                                "buckets": [
+                                    14877,
+                                    7,
+                                    1,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ]
+                            },
+                            "statistics": {
+                                "mean": 36.16988815745281,
+                                "stddev": 339.45364676989226,
+                                "maximum": 34403.0390625,
+                                "minimum": -739.40966796875,
+                                "valid_percent": 2.8394699096679688
+                            }
+                        }
+                    ],
+                    "proj:geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    -90.0
+                                ]
+                            ]
+                        ]
+                    },
+                    "proj:projjson": {
+                        "id": {
+                            "code": 4326,
+                            "authority": "EPSG"
+                        },
+                        "name": "WGS 84",
+                        "type": "GeographicCRS",
+                        "datum": {
+                            "name": "World Geodetic System 1984",
+                            "type": "GeodeticReferenceFrame",
+                            "ellipsoid": {
+                                "name": "WGS 84",
+                                "semi_major_axis": 6378137,
+                                "inverse_flattening": 298.257223563
+                            }
+                        },
+                        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+                        "coordinate_system": {
+                            "axis": [
+                                {
+                                    "name": "Geodetic latitude",
+                                    "unit": "degree",
+                                    "direction": "north",
+                                    "abbreviation": "Lat"
+                                },
+                                {
+                                    "name": "Geodetic longitude",
+                                    "unit": "degree",
+                                    "direction": "east",
+                                    "abbreviation": "Lon"
+                                }
+                            ],
+                            "subtype": "ellipsoidal"
+                        }
+                    },
+                    "proj:transform": [
+                        0.008333333333333333,
+                        0.0,
+                        -180.0,
+                        0.0,
+                        -0.008333333333333333,
+                        90.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "rendered_preview": {
+                    "title": "Rendered preview",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202209/preview.png?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "roles": [
+                        "overview"
+                    ],
+                    "type": "image/png"
+                }
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -180,
+                            -90
+                        ],
+                        [
+                            180,
+                            -90
+                        ],
+                        [
+                            180,
+                            90
+                        ],
+                        [
+                            -180,
+                            90
+                        ],
+                        [
+                            -180,
+                            -90
+                        ]
+                    ]
+                ]
+            },
+            "collection": "odiac-ffco2-monthgrid-v2023",
+            "properties": {
+                "end_datetime": "2022-09-30T00:00:00+00:00",
+                "start_datetime": "2022-09-01T00:00:00+00:00"
+            },
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ]
+        },
+        {
+            "id": "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202208",
+            "bbox": [
+                -180.0,
+                -90.0,
+                180.0,
+                90.0
+            ],
+            "type": "Feature",
+            "links": [
+                {
+                    "rel": "collection",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "parent",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "root",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/"
+                },
+                {
+                    "rel": "self",
+                    "type": "application/geo+json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202208"
+                },
+                {
+                    "title": "Map of Item",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202208/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "type": "text/html"
+                }
+            ],
+            "assets": {
+                "co2-emissions": {
+                    "href": "s3://ghgc-data-store/odiac-ffco2-monthgrid-v2023/odiac2023_1km_excl_intl_202208.tif",
+                    "type": "image/tiff; application=geotiff",
+                    "roles": [
+                        "data",
+                        "layer"
+                    ],
+                    "title": "Fossil Fuel CO\u2082 Emissions",
+                    "proj:bbox": [
+                        -180.0,
+                        -90.0,
+                        180.0,
+                        90.0
+                    ],
+                    "proj:epsg": 4326,
+                    "proj:wkt2": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+                    "proj:shape": [
+                        21600,
+                        43200
+                    ],
+                    "description": "Model-estimated monthly, 1 km resolution CO\u2082 emissions from fossil fuel combustion, cement production and gas flaring created using space-based nighttime light data and individual power plant emission/location profiles.",
+                    "raster:bands": [
+                        {
+                            "scale": 1.0,
+                            "nodata": -9999.0,
+                            "offset": 0.0,
+                            "sampling": "area",
+                            "data_type": "float32",
+                            "histogram": {
+                                "max": 38797.8203125,
+                                "min": -833.9398803710938,
+                                "count": 11,
+                                "buckets": [
+                                    14875,
+                                    9,
+                                    1,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ]
+                            },
+                            "statistics": {
+                                "mean": 41.745986431114396,
+                                "stddev": 391.63420384547373,
+                                "maximum": 38797.8203125,
+                                "minimum": -833.9398803710938,
+                                "valid_percent": 2.8394699096679688
+                            }
+                        }
+                    ],
+                    "proj:geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    -90.0
+                                ]
+                            ]
+                        ]
+                    },
+                    "proj:projjson": {
+                        "id": {
+                            "code": 4326,
+                            "authority": "EPSG"
+                        },
+                        "name": "WGS 84",
+                        "type": "GeographicCRS",
+                        "datum": {
+                            "name": "World Geodetic System 1984",
+                            "type": "GeodeticReferenceFrame",
+                            "ellipsoid": {
+                                "name": "WGS 84",
+                                "semi_major_axis": 6378137,
+                                "inverse_flattening": 298.257223563
+                            }
+                        },
+                        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+                        "coordinate_system": {
+                            "axis": [
+                                {
+                                    "name": "Geodetic latitude",
+                                    "unit": "degree",
+                                    "direction": "north",
+                                    "abbreviation": "Lat"
+                                },
+                                {
+                                    "name": "Geodetic longitude",
+                                    "unit": "degree",
+                                    "direction": "east",
+                                    "abbreviation": "Lon"
+                                }
+                            ],
+                            "subtype": "ellipsoidal"
+                        }
+                    },
+                    "proj:transform": [
+                        0.008333333333333333,
+                        0.0,
+                        -180.0,
+                        0.0,
+                        -0.008333333333333333,
+                        90.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "rendered_preview": {
+                    "title": "Rendered preview",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202208/preview.png?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "roles": [
+                        "overview"
+                    ],
+                    "type": "image/png"
+                }
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -180,
+                            -90
+                        ],
+                        [
+                            180,
+                            -90
+                        ],
+                        [
+                            180,
+                            90
+                        ],
+                        [
+                            -180,
+                            90
+                        ],
+                        [
+                            -180,
+                            -90
+                        ]
+                    ]
+                ]
+            },
+            "collection": "odiac-ffco2-monthgrid-v2023",
+            "properties": {
+                "end_datetime": "2022-08-31T00:00:00+00:00",
+                "start_datetime": "2022-08-01T00:00:00+00:00"
+            },
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ]
+        },
+        {
+            "id": "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202207",
+            "bbox": [
+                -180.0,
+                -90.0,
+                180.0,
+                90.0
+            ],
+            "type": "Feature",
+            "links": [
+                {
+                    "rel": "collection",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "parent",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "root",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/"
+                },
+                {
+                    "rel": "self",
+                    "type": "application/geo+json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202207"
+                },
+                {
+                    "title": "Map of Item",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202207/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "type": "text/html"
+                }
+            ],
+            "assets": {
+                "co2-emissions": {
+                    "href": "s3://ghgc-data-store/odiac-ffco2-monthgrid-v2023/odiac2023_1km_excl_intl_202207.tif",
+                    "type": "image/tiff; application=geotiff",
+                    "roles": [
+                        "data",
+                        "layer"
+                    ],
+                    "title": "Fossil Fuel CO\u2082 Emissions",
+                    "proj:bbox": [
+                        -180.0,
+                        -90.0,
+                        180.0,
+                        90.0
+                    ],
+                    "proj:epsg": 4326,
+                    "proj:wkt2": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+                    "proj:shape": [
+                        21600,
+                        43200
+                    ],
+                    "description": "Model-estimated monthly, 1 km resolution CO\u2082 emissions from fossil fuel combustion, cement production and gas flaring created using space-based nighttime light data and individual power plant emission/location profiles.",
+                    "raster:bands": [
+                        {
+                            "scale": 1.0,
+                            "nodata": -9999.0,
+                            "offset": 0.0,
+                            "sampling": "area",
+                            "data_type": "float32",
+                            "histogram": {
+                                "max": 40943.97265625,
+                                "min": -880.1158447265625,
+                                "count": 11,
+                                "buckets": [
+                                    14877,
+                                    7,
+                                    1,
+                                    0,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ]
+                            },
+                            "statistics": {
+                                "mean": 41.40348122523007,
+                                "stddev": 400.4460955532274,
+                                "maximum": 40943.97265625,
+                                "minimum": -880.1158447265625,
+                                "valid_percent": 2.8394699096679688
+                            }
+                        }
+                    ],
+                    "proj:geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    -90.0
+                                ]
+                            ]
+                        ]
+                    },
+                    "proj:projjson": {
+                        "id": {
+                            "code": 4326,
+                            "authority": "EPSG"
+                        },
+                        "name": "WGS 84",
+                        "type": "GeographicCRS",
+                        "datum": {
+                            "name": "World Geodetic System 1984",
+                            "type": "GeodeticReferenceFrame",
+                            "ellipsoid": {
+                                "name": "WGS 84",
+                                "semi_major_axis": 6378137,
+                                "inverse_flattening": 298.257223563
+                            }
+                        },
+                        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+                        "coordinate_system": {
+                            "axis": [
+                                {
+                                    "name": "Geodetic latitude",
+                                    "unit": "degree",
+                                    "direction": "north",
+                                    "abbreviation": "Lat"
+                                },
+                                {
+                                    "name": "Geodetic longitude",
+                                    "unit": "degree",
+                                    "direction": "east",
+                                    "abbreviation": "Lon"
+                                }
+                            ],
+                            "subtype": "ellipsoidal"
+                        }
+                    },
+                    "proj:transform": [
+                        0.008333333333333333,
+                        0.0,
+                        -180.0,
+                        0.0,
+                        -0.008333333333333333,
+                        90.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "rendered_preview": {
+                    "title": "Rendered preview",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202207/preview.png?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "roles": [
+                        "overview"
+                    ],
+                    "type": "image/png"
+                }
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -180,
+                            -90
+                        ],
+                        [
+                            180,
+                            -90
+                        ],
+                        [
+                            180,
+                            90
+                        ],
+                        [
+                            -180,
+                            90
+                        ],
+                        [
+                            -180,
+                            -90
+                        ]
+                    ]
+                ]
+            },
+            "collection": "odiac-ffco2-monthgrid-v2023",
+            "properties": {
+                "end_datetime": "2022-07-31T00:00:00+00:00",
+                "start_datetime": "2022-07-01T00:00:00+00:00"
+            },
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ]
+        },
+        {
+            "id": "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202206",
+            "bbox": [
+                -180.0,
+                -90.0,
+                180.0,
+                90.0
+            ],
+            "type": "Feature",
+            "links": [
+                {
+                    "rel": "collection",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "parent",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "root",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/"
+                },
+                {
+                    "rel": "self",
+                    "type": "application/geo+json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202206"
+                },
+                {
+                    "title": "Map of Item",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202206/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "type": "text/html"
+                }
+            ],
+            "assets": {
+                "co2-emissions": {
+                    "href": "s3://ghgc-data-store/odiac-ffco2-monthgrid-v2023/odiac2023_1km_excl_intl_202206.tif",
+                    "type": "image/tiff; application=geotiff",
+                    "roles": [
+                        "data",
+                        "layer"
+                    ],
+                    "title": "Fossil Fuel CO\u2082 Emissions",
+                    "proj:bbox": [
+                        -180.0,
+                        -90.0,
+                        180.0,
+                        90.0
+                    ],
+                    "proj:epsg": 4326,
+                    "proj:wkt2": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+                    "proj:shape": [
+                        21600,
+                        43200
+                    ],
+                    "description": "Model-estimated monthly, 1 km resolution CO\u2082 emissions from fossil fuel combustion, cement production and gas flaring created using space-based nighttime light data and individual power plant emission/location profiles.",
+                    "raster:bands": [
+                        {
+                            "scale": 1.0,
+                            "nodata": -9999.0,
+                            "offset": 0.0,
+                            "sampling": "area",
+                            "data_type": "float32",
+                            "histogram": {
+                                "max": 39540.3046875,
+                                "min": -849.9415283203125,
+                                "count": 11,
+                                "buckets": [
+                                    14878,
+                                    6,
+                                    1,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ]
+                            },
+                            "statistics": {
+                                "mean": 36.8856888560489,
+                                "stddev": 374.0983392467257,
+                                "maximum": 39540.3046875,
+                                "minimum": -849.9415283203125,
+                                "valid_percent": 2.8394699096679688
+                            }
+                        }
+                    ],
+                    "proj:geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    -90.0
+                                ]
+                            ]
+                        ]
+                    },
+                    "proj:projjson": {
+                        "id": {
+                            "code": 4326,
+                            "authority": "EPSG"
+                        },
+                        "name": "WGS 84",
+                        "type": "GeographicCRS",
+                        "datum": {
+                            "name": "World Geodetic System 1984",
+                            "type": "GeodeticReferenceFrame",
+                            "ellipsoid": {
+                                "name": "WGS 84",
+                                "semi_major_axis": 6378137,
+                                "inverse_flattening": 298.257223563
+                            }
+                        },
+                        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+                        "coordinate_system": {
+                            "axis": [
+                                {
+                                    "name": "Geodetic latitude",
+                                    "unit": "degree",
+                                    "direction": "north",
+                                    "abbreviation": "Lat"
+                                },
+                                {
+                                    "name": "Geodetic longitude",
+                                    "unit": "degree",
+                                    "direction": "east",
+                                    "abbreviation": "Lon"
+                                }
+                            ],
+                            "subtype": "ellipsoidal"
+                        }
+                    },
+                    "proj:transform": [
+                        0.008333333333333333,
+                        0.0,
+                        -180.0,
+                        0.0,
+                        -0.008333333333333333,
+                        90.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "rendered_preview": {
+                    "title": "Rendered preview",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202206/preview.png?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "roles": [
+                        "overview"
+                    ],
+                    "type": "image/png"
+                }
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -180,
+                            -90
+                        ],
+                        [
+                            180,
+                            -90
+                        ],
+                        [
+                            180,
+                            90
+                        ],
+                        [
+                            -180,
+                            90
+                        ],
+                        [
+                            -180,
+                            -90
+                        ]
+                    ]
+                ]
+            },
+            "collection": "odiac-ffco2-monthgrid-v2023",
+            "properties": {
+                "end_datetime": "2022-06-30T00:00:00+00:00",
+                "start_datetime": "2022-06-01T00:00:00+00:00"
+            },
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ]
+        },
+        {
+            "id": "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202205",
+            "bbox": [
+                -180.0,
+                -90.0,
+                180.0,
+                90.0
+            ],
+            "type": "Feature",
+            "links": [
+                {
+                    "rel": "collection",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "parent",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "root",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/"
+                },
+                {
+                    "rel": "self",
+                    "type": "application/geo+json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202205"
+                },
+                {
+                    "title": "Map of Item",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202205/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "type": "text/html"
+                }
+            ],
+            "assets": {
+                "co2-emissions": {
+                    "href": "s3://ghgc-data-store/odiac-ffco2-monthgrid-v2023/odiac2023_1km_excl_intl_202205.tif",
+                    "type": "image/tiff; application=geotiff",
+                    "roles": [
+                        "data",
+                        "layer"
+                    ],
+                    "title": "Fossil Fuel CO\u2082 Emissions",
+                    "proj:bbox": [
+                        -180.0,
+                        -90.0,
+                        180.0,
+                        90.0
+                    ],
+                    "proj:epsg": 4326,
+                    "proj:wkt2": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+                    "proj:shape": [
+                        21600,
+                        43200
+                    ],
+                    "description": "Model-estimated monthly, 1 km resolution CO\u2082 emissions from fossil fuel combustion, cement production and gas flaring created using space-based nighttime light data and individual power plant emission/location profiles.",
+                    "raster:bands": [
+                        {
+                            "scale": 1.0,
+                            "nodata": -9999.0,
+                            "offset": 0.0,
+                            "sampling": "area",
+                            "data_type": "float32",
+                            "histogram": {
+                                "max": 39881.86328125,
+                                "min": -857.263916015625,
+                                "count": 11,
+                                "buckets": [
+                                    14878,
+                                    6,
+                                    1,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ]
+                            },
+                            "statistics": {
+                                "mean": 34.757323923557465,
+                                "stddev": 371.0941650481002,
+                                "maximum": 39881.86328125,
+                                "minimum": -857.263916015625,
+                                "valid_percent": 2.8394699096679688
+                            }
+                        }
+                    ],
+                    "proj:geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    -90.0
+                                ]
+                            ]
+                        ]
+                    },
+                    "proj:projjson": {
+                        "id": {
+                            "code": 4326,
+                            "authority": "EPSG"
+                        },
+                        "name": "WGS 84",
+                        "type": "GeographicCRS",
+                        "datum": {
+                            "name": "World Geodetic System 1984",
+                            "type": "GeodeticReferenceFrame",
+                            "ellipsoid": {
+                                "name": "WGS 84",
+                                "semi_major_axis": 6378137,
+                                "inverse_flattening": 298.257223563
+                            }
+                        },
+                        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+                        "coordinate_system": {
+                            "axis": [
+                                {
+                                    "name": "Geodetic latitude",
+                                    "unit": "degree",
+                                    "direction": "north",
+                                    "abbreviation": "Lat"
+                                },
+                                {
+                                    "name": "Geodetic longitude",
+                                    "unit": "degree",
+                                    "direction": "east",
+                                    "abbreviation": "Lon"
+                                }
+                            ],
+                            "subtype": "ellipsoidal"
+                        }
+                    },
+                    "proj:transform": [
+                        0.008333333333333333,
+                        0.0,
+                        -180.0,
+                        0.0,
+                        -0.008333333333333333,
+                        90.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "rendered_preview": {
+                    "title": "Rendered preview",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202205/preview.png?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "roles": [
+                        "overview"
+                    ],
+                    "type": "image/png"
+                }
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -180,
+                            -90
+                        ],
+                        [
+                            180,
+                            -90
+                        ],
+                        [
+                            180,
+                            90
+                        ],
+                        [
+                            -180,
+                            90
+                        ],
+                        [
+                            -180,
+                            -90
+                        ]
+                    ]
+                ]
+            },
+            "collection": "odiac-ffco2-monthgrid-v2023",
+            "properties": {
+                "end_datetime": "2022-05-31T00:00:00+00:00",
+                "start_datetime": "2022-05-01T00:00:00+00:00"
+            },
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ]
+        },
+        {
+            "id": "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202204",
+            "bbox": [
+                -180.0,
+                -90.0,
+                180.0,
+                90.0
+            ],
+            "type": "Feature",
+            "links": [
+                {
+                    "rel": "collection",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "parent",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "root",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/"
+                },
+                {
+                    "rel": "self",
+                    "type": "application/geo+json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202204"
+                },
+                {
+                    "title": "Map of Item",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202204/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "type": "text/html"
+                }
+            ],
+            "assets": {
+                "co2-emissions": {
+                    "href": "s3://ghgc-data-store/odiac-ffco2-monthgrid-v2023/odiac2023_1km_excl_intl_202204.tif",
+                    "type": "image/tiff; application=geotiff",
+                    "roles": [
+                        "data",
+                        "layer"
+                    ],
+                    "title": "Fossil Fuel CO\u2082 Emissions",
+                    "proj:bbox": [
+                        -180.0,
+                        -90.0,
+                        180.0,
+                        90.0
+                    ],
+                    "proj:epsg": 4326,
+                    "proj:wkt2": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+                    "proj:shape": [
+                        21600,
+                        43200
+                    ],
+                    "description": "Model-estimated monthly, 1 km resolution CO\u2082 emissions from fossil fuel combustion, cement production and gas flaring created using space-based nighttime light data and individual power plant emission/location profiles.",
+                    "raster:bands": [
+                        {
+                            "scale": 1.0,
+                            "nodata": -9999.0,
+                            "offset": 0.0,
+                            "sampling": "area",
+                            "data_type": "float32",
+                            "histogram": {
+                                "max": 36499.515625,
+                                "min": -784.5167846679688,
+                                "count": 11,
+                                "buckets": [
+                                    14878,
+                                    6,
+                                    1,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ]
+                            },
+                            "statistics": {
+                                "mean": 33.3288628501377,
+                                "stddev": 343.7530086122271,
+                                "maximum": 36499.515625,
+                                "minimum": -784.5167846679688,
+                                "valid_percent": 2.8394699096679688
+                            }
+                        }
+                    ],
+                    "proj:geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    -90.0
+                                ]
+                            ]
+                        ]
+                    },
+                    "proj:projjson": {
+                        "id": {
+                            "code": 4326,
+                            "authority": "EPSG"
+                        },
+                        "name": "WGS 84",
+                        "type": "GeographicCRS",
+                        "datum": {
+                            "name": "World Geodetic System 1984",
+                            "type": "GeodeticReferenceFrame",
+                            "ellipsoid": {
+                                "name": "WGS 84",
+                                "semi_major_axis": 6378137,
+                                "inverse_flattening": 298.257223563
+                            }
+                        },
+                        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+                        "coordinate_system": {
+                            "axis": [
+                                {
+                                    "name": "Geodetic latitude",
+                                    "unit": "degree",
+                                    "direction": "north",
+                                    "abbreviation": "Lat"
+                                },
+                                {
+                                    "name": "Geodetic longitude",
+                                    "unit": "degree",
+                                    "direction": "east",
+                                    "abbreviation": "Lon"
+                                }
+                            ],
+                            "subtype": "ellipsoidal"
+                        }
+                    },
+                    "proj:transform": [
+                        0.008333333333333333,
+                        0.0,
+                        -180.0,
+                        0.0,
+                        -0.008333333333333333,
+                        90.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "rendered_preview": {
+                    "title": "Rendered preview",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202204/preview.png?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "roles": [
+                        "overview"
+                    ],
+                    "type": "image/png"
+                }
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -180,
+                            -90
+                        ],
+                        [
+                            180,
+                            -90
+                        ],
+                        [
+                            180,
+                            90
+                        ],
+                        [
+                            -180,
+                            90
+                        ],
+                        [
+                            -180,
+                            -90
+                        ]
+                    ]
+                ]
+            },
+            "collection": "odiac-ffco2-monthgrid-v2023",
+            "properties": {
+                "end_datetime": "2022-04-30T00:00:00+00:00",
+                "start_datetime": "2022-04-01T00:00:00+00:00"
+            },
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ]
+        },
+        {
+            "id": "odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202203",
+            "bbox": [
+                -180.0,
+                -90.0,
+                180.0,
+                90.0
+            ],
+            "type": "Feature",
+            "links": [
+                {
+                    "rel": "collection",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "parent",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+                },
+                {
+                    "rel": "root",
+                    "type": "application/json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/"
+                },
+                {
+                    "rel": "self",
+                    "type": "application/geo+json",
+                    "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202203"
+                },
+                {
+                    "title": "Map of Item",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202203/map?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "type": "text/html"
+                }
+            ],
+            "assets": {
+                "co2-emissions": {
+                    "href": "s3://ghgc-data-store/odiac-ffco2-monthgrid-v2023/odiac2023_1km_excl_intl_202203.tif",
+                    "type": "image/tiff; application=geotiff",
+                    "roles": [
+                        "data",
+                        "layer"
+                    ],
+                    "title": "Fossil Fuel CO\u2082 Emissions",
+                    "proj:bbox": [
+                        -180.0,
+                        -90.0,
+                        180.0,
+                        90.0
+                    ],
+                    "proj:epsg": 4326,
+                    "proj:wkt2": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+                    "proj:shape": [
+                        21600,
+                        43200
+                    ],
+                    "description": "Model-estimated monthly, 1 km resolution CO\u2082 emissions from fossil fuel combustion, cement production and gas flaring created using space-based nighttime light data and individual power plant emission/location profiles.",
+                    "raster:bands": [
+                        {
+                            "scale": 1.0,
+                            "nodata": -9999.0,
+                            "offset": 0.0,
+                            "sampling": "area",
+                            "data_type": "float32",
+                            "histogram": {
+                                "max": 37905.8984375,
+                                "min": -814.7494506835938,
+                                "count": 11,
+                                "buckets": [
+                                    14877,
+                                    7,
+                                    1,
+                                    1,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ]
+                            },
+                            "statistics": {
+                                "mean": 36.90276331698798,
+                                "stddev": 364.63931038190174,
+                                "maximum": 37905.8984375,
+                                "minimum": -814.7494506835938,
+                                "valid_percent": 2.8394699096679688
+                            }
+                        }
+                    ],
+                    "proj:geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    -90.0
+                                ],
+                                [
+                                    180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    90.0
+                                ],
+                                [
+                                    -180.0,
+                                    -90.0
+                                ]
+                            ]
+                        ]
+                    },
+                    "proj:projjson": {
+                        "id": {
+                            "code": 4326,
+                            "authority": "EPSG"
+                        },
+                        "name": "WGS 84",
+                        "type": "GeographicCRS",
+                        "datum": {
+                            "name": "World Geodetic System 1984",
+                            "type": "GeodeticReferenceFrame",
+                            "ellipsoid": {
+                                "name": "WGS 84",
+                                "semi_major_axis": 6378137,
+                                "inverse_flattening": 298.257223563
+                            }
+                        },
+                        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+                        "coordinate_system": {
+                            "axis": [
+                                {
+                                    "name": "Geodetic latitude",
+                                    "unit": "degree",
+                                    "direction": "north",
+                                    "abbreviation": "Lat"
+                                },
+                                {
+                                    "name": "Geodetic longitude",
+                                    "unit": "degree",
+                                    "direction": "east",
+                                    "abbreviation": "Lon"
+                                }
+                            ],
+                            "subtype": "ellipsoidal"
+                        }
+                    },
+                    "proj:transform": [
+                        0.008333333333333333,
+                        0.0,
+                        -180.0,
+                        0.0,
+                        -0.008333333333333333,
+                        90.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "rendered_preview": {
+                    "title": "Rendered preview",
+                    "href": "https://earth.gov/ghgcenter/api/raster/collections/odiac-ffco2-monthgrid-v2023/items/odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202203/preview.png?assets=co2-emissions&rescale=-10%2C60&colormap_name=jet",
+                    "rel": "preview",
+                    "roles": [
+                        "overview"
+                    ],
+                    "type": "image/png"
+                }
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -180,
+                            -90
+                        ],
+                        [
+                            180,
+                            -90
+                        ],
+                        [
+                            180,
+                            90
+                        ],
+                        [
+                            -180,
+                            90
+                        ],
+                        [
+                            -180,
+                            -90
+                        ]
+                    ]
+                ]
+            },
+            "collection": "odiac-ffco2-monthgrid-v2023",
+            "properties": {
+                "end_datetime": "2022-03-31T00:00:00+00:00",
+                "start_datetime": "2022-03-01T00:00:00+00:00"
+            },
+            "stac_version": "1.0.0",
+            "stac_extensions": [
+                "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+                "https://stac-extensions.github.io/projection/v1.1.0/schema.json"
+            ]
+        }
+    ],
+    "links": [
+        {
+            "rel": "collection",
+            "type": "application/json",
+            "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+        },
+        {
+            "rel": "parent",
+            "type": "application/json",
+            "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023"
+        },
+        {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://earth.gov/ghgcenter/api/stac/"
+        },
+        {
+            "rel": "self",
+            "type": "application/geo+json",
+            "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items"
+        },
+        {
+            "rel": "next",
+            "type": "application/geo+json",
+            "method": "GET",
+            "href": "https://earth.gov/ghgcenter/api/stac/collections/odiac-ffco2-monthgrid-v2023/items?token=next:odiac-ffco2-monthgrid-v2023:odiac-ffco2-monthgrid-v2023-odiac2023_1km_excl_intl_202203"
+        }
+    ]
+}
