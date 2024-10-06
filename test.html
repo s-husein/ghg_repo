@@ -147,11 +147,14 @@
         });
 
         const dateSlider = document.getElementById('dateSlider');
+        dateSlider.value = 0;
         const dateLabel = document.getElementById('dateLabel');
 
         // Populate the slider with years and months
         const dateMapping = [];
         let index = 0;
+        var selectedDate = ``;
+        var selectedCountry = ``;
 
         for (let year = 2000; year <= 2022; year++) {
             for (let month = 1; month <= 12; month++) {
@@ -163,77 +166,13 @@
         dateSlider.max = dateMapping.length - 1; // Set the max value for the slider
 
         dateSlider.addEventListener('input', function() {
-            const selectedDate = dateMapping[dateSlider.value];
+            selectedDate = dateMapping[dateSlider.value];
             dateLabel.innerText = `Selected Date: ${selectedDate}`;
-            fetchCountryData(selectedDate); // Fetch data for the selected date
+            fetchCountryData(selectedCountry, selectedDate);
         });
 
-        function fetchTileData(date) {
-            fetch(`/get_tile_data?date=${date}`) // Send the selected date to the backend
-                .then(response => response.json())
-                .then(data => {
-                    // Check if the data has an error
-                    // if (data.error) {
-                    //     alert(data.error);
-                    //     return;
-                    // }
-
-                    // // Remove previous tile layer
-                    // map.eachLayer(function (layer) {
-                    //     if (layer instanceof L.TileLayer) {
-                    //         map.removeLayer(layer);
-                    //     }
-                    // });
-
-                    // // Add a new tile layer based on the received data
-                    // const tileLayer = L.tileLayer(data.tileUrl, { // Assuming the backend returns a tile URL
-                    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                    // });
-                    // tileLayer.addTo(map); // Add the new tile layer to the map
-
-                    // // Optionally adjust the map view
-                    // if (data.bounds) {
-                    //     map.fitBounds(data.bounds); // If bounds are provided, fit the map to those bounds
-                    // }
-                })
-                // .catch(error => console.error('Error fetching tile data:', error));
-        }
-
-        function fetchCountryBoundary(countryName) {
-        fetch(`/get_country_boundary?country=${countryName}`)
-            .then(response => response.json())
-            .then(data => {
-                // Clear any previous layers
-                map.eachLayer(function (layer) {
-                    if (layer instanceof L.GeoJSON) {
-                        map.removeLayer(layer);
-                    }
-                });
-
-                // Check if the data has an error
-                if (data.error) {
-                    alert(data.error);
-                    return;
-                }
-                
-                var countryLayer = L.geoJSON(data, {
-                style: function (feature) {
-                    return {
-                        color: "blue",
-                        fillColor: "lightblue",
-                        fillOpacity: 0.5,
-                        weight: 2
-                    };
-                }
-                }).addTo(map);
-        
-                map.fitBounds(L.geoJSON(data).getBounds());
-            })
-            .catch(error => console.error('Error fetching the country boundary:', error));
-        }
-
-        function fetchCountryData(countryName) {
-            fetch(`/get_country_stats?country=${countryName}`)
+        function fetchCountryData(countryName, date) {
+            fetch(`/get_country_stats?country=${countryName}&date=${date}`)
                 .then(response => response.json())
                 .then(data => {
                     // Check if the data has an error
@@ -241,7 +180,24 @@
                         alert(data.error);
                         return;
                     }
+                    map.eachLayer(function (layer) {
+                        if (layer instanceof L.GeoJSON) {
+                            map.removeLayer(layer);
+                        }
+                    });
 
+                    var countryLayer = L.geoJSON(data.map, {
+                    style: function (feature) {
+                        return {
+                            color: "blue",
+                            fillColor: "lightblue",
+                            fillOpacity: 0.5,
+                            weight: 2
+                        };
+                    }
+                    }).addTo(map);
+                    map.fitBounds(L.geoJSON(data.map).getBounds());
+                    
                     // Clear any previous content in the info container
                     var infoContainer = document.getElementById('info-container');
                     infoContainer.innerHTML = ''; // Clear any previous data
@@ -250,7 +206,7 @@
                     // Add the country data to the container
                     var content = `
                         <h4>Total max CO2 emission</h4>
-                        <p>${data.max} gC/m2/d</p>
+                        <p>${data.stats.max} gC/m2/d</p>
                     `;
                     infoContainer.innerHTML = content;
 
@@ -265,9 +221,8 @@
         Array.from(items).forEach(item => {
             item.addEventListener('click', function() {
                 console.log("function called")
-                const selectedCountry = item.getAttribute('data-value');
-                fetchCountryBoundary(selectedCountry);
-                fetchCountryData(selectedCountry);
+                selectedCountry = item.getAttribute('data-value');
+                fetchCountryData(selectedCountry, selectedDate);
                 searchInput.value = item.textContent;
                 dropdown.style.display = 'none';
             });

@@ -50,12 +50,16 @@ def get_country_boundary():
 
 @app.route("/get_country_stats", methods=['GET'])
 def get_country_stats():
+    data = {}
     country_name = request.args.get("country")
+    data['date'] = request.args.get('date')
     country = world[world.name == country_name]
     countryjson = json.loads(country.to_json())
+    data['map'] = countryjson
     conv_json(countryjson)
-    stats = generate_stats(items[0], countryjson)['statistics']['b1']
-    return jsonify(stats)
+    data['stats'] = generate_stats(items[0], countryjson)['statistics']['b1']
+    print(data['date'])
+    return jsonify(data)
 
     
 
