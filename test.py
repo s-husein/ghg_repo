@@ -34,6 +34,7 @@ collection_name = "odiac-ffco2-monthgrid-v2023"
 asset_name = "co2-emissions"
 
 items = requests.get(f"{STAC_API_URL}/collections/{collection_name}/items?limit=276").json()["features"]
+items = {item["properties"]["start_datetime"][:7]: item for item in items}
 
 world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
 # country_name = 'Pakistan'
@@ -57,7 +58,7 @@ def get_country_stats():
     countryjson = json.loads(country.to_json())
     data['map'] = countryjson
     conv_json(countryjson)
-    data['stats'] = generate_stats(items[0], countryjson)['statistics']['b1']
+    data['stats'] = generate_stats(items[data['date']], countryjson)['statistics']['b1']
     print(data['date'])
     return jsonify(data)
 

@@ -153,19 +153,19 @@
         // Populate the slider with years and months
         const dateMapping = [];
         let index = 0;
-        var selectedDate = ``;
+        var selectedDate = `2000-01`;
         var selectedCountry = ``;
 
         for (let year = 2000; year <= 2022; year++) {
             for (let month = 1; month <= 12; month++) {
-                const dateStr = `${year}-${month}`; // First day of the month
+                const dateStr = `${year}-${String(month).padStart(2, '0')}`; // First day of the month
                 dateMapping[index++] = dateStr;
             }
         }
 
         dateSlider.max = dateMapping.length - 1; // Set the max value for the slider
 
-        dateSlider.addEventListener('input', function() {
+        dateSlider.addEventListener('change', function() {
             selectedDate = dateMapping[dateSlider.value];
             dateLabel.innerText = `Selected Date: ${selectedDate}`;
             fetchCountryData(selectedCountry, selectedDate);
@@ -205,7 +205,7 @@
 
                     // Add the country data to the container
                     var content = `
-                        <h4>Total max CO2 emission</h4>
+                        <h4>Total max CO2 emission in ${data.date}</h4>
                         <p>${data.stats.max} gC/m2/d</p>
                     `;
                     infoContainer.innerHTML = content;

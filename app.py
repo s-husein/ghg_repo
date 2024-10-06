@@ -70,17 +70,17 @@ asset_name = "co2-emissions"
 
 # color_map = "rainbow"
 
-# tile = requests.get(
-#     f"{RASTER_API_URL}/collections/{items['2022-12']['collection']}/items/{items['2022-12']['id']}/tilejson.json?"
+tile = requests.get(
+    f"{RASTER_API_URL}/collections/{items['2022-12']['collection']}/items/{items['2022-12']['id']}/tilejson.json?"
 
-#     f"&assets={asset_name}"
+    f"&assets={asset_name}"
 
-#     f"&color_formula=gamma+r+1.05&colormap_name={color_map}"
+    f"&color_formula=gamma+r+1.05&colormap_name={color_map}"
 
-#     f"&rescale={rscl_vals['min']},{rscl_vals['max']}", 
+    f"&rescale={rscl_vals['min']},{rscl_vals['max']}", 
 
-# # Return the response in JSON format
-# ).json()
+# Return the response in JSON format
+).json()
 zoom = 11
 
 
@@ -96,9 +96,12 @@ conv_json(countryjson)
 
 
 items = requests.get(f"{STAC_API_URL}/collections/{collection_name}/items?limit={num_items}").json()["features"]
-
+items = {item["properties"]["start_datetime"][:7]: item for item in items}
+print(items.keys())
 # stats = [generate_stats(item, countryjson) for item in items]
-stats = generate_stats(items[0], countryjson)
+stats = generate_stats(items['2000-01'], countryjson)
+
+# print(items[0])
 
 print(stats['start_datetime'])
 
