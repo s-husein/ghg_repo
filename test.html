@@ -64,7 +64,7 @@
 
         #info-container {
             position: absolute;
-            top: 500px;
+            top: 50%;
             left: 10px;
             background-color: white;
             border: 1px solid #ccc;
@@ -192,10 +192,17 @@
 
                     co2Layer = L.tileLayer(data.tile.tiles[0], {
                         attribution: 'GHG',
-                        opacity: 0.7
+                        opacity: 0.7,
+                        colormap:'jet'
                     })
 
-                    co2Layer.addTo(map);
+                    // co2Layer = L.heatLayer(data.tile.tiles[0], {
+                    //     radius: 25, // Adjust the radius of the heatmap points
+                    //     blur: 15,    // Adjust the blur of the heatmap
+                    //     maxZoom: 1   // Maximum zoom level for the heatmap
+                    // })
+
+                    co2Layer.addTo(map)
 
 
                     var countryLayer = L.geoJSON(data.map, {
