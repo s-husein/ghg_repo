@@ -81,7 +81,7 @@ tile = requests.get(
 
 # Return the response in JSON format
 ).json()
-zoom = 11
+# zoom = 11
 
 
 

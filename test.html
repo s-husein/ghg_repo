@@ -125,7 +125,7 @@
             zoomControl: true,
             preferCanvas: false,
         });
-
+        var co2Layer;
         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         }).addTo(map);
@@ -185,6 +185,18 @@
                             map.removeLayer(layer);
                         }
                     });
+
+                    if (co2Layer) {
+                        map.removeLayer(co2Layer);
+    }
+
+                    co2Layer = L.tileLayer(data.tile.tiles[0], {
+                        attribution: 'GHG',
+                        opacity: 0.7
+                    })
+
+                    co2Layer.addTo(map);
+
 
                     var countryLayer = L.geoJSON(data.map, {
                     style: function (feature) {
