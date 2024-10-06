@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .dropdown-container {
+            position: absolute;
+            top: 100px; /* Adjust for vertical positioning */
+            left: 20px; /* Adjust for horizontal positioning */
+            z-index: 1000; /* Ensures the dropdown is above the map */
+            background-color: white; /* Optional: Background color for better visibility */
+            border: 1px solid #ccc; /* Optional: Border for better visibility */
+            border-radius: 5px; /* Optional: Rounded corners */
+            padding: 5px; /* Optional: Padding */
+        }
+
+        #searchInput {
+            width: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc; /* Optional: Add a border to the input */
+            border-radius: 5px; /* Optional: Rounded corners */
+        }
+
+        .dropdown-list {
+            position: absolute;
+            z-index: 1;
+            background-color: white;
+            border: 1px solid #ccc;
+            display: none;
+            width: 100%;
+            max-height: 150px; /* Set a maximum height */
+            overflow-y: auto; /* Add vertical scroll if needed */
+        }
+
+        .dropdown-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f1f1f1;
+        }
+
+        #info-container {
+            position: absolute;
+            top: 500px;
+            left: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 10010;
+            display: none;
+        }
+
+        .slider-container {
+            position: absolute;
+            bottom: 20px; /* Adjust to your liking */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust to center the container */
+            z-index: 1002;
+            background-color: white; /* Optional */
+            padding: 10px; /* Optional */
+            border: 1px solid #ccc; /* Optional */
+            border-radius: 5px; /* Optional */
+            width: 800px; /* Width of the info container */
+        }
+
+        input[type="range"] {
+            width: 100%; /* Set the slider input to take the full width of its container */
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <div class="dropdown-container">
+        <input type="text" id="searchInput" placeholder="Search for a country..." />
+        <div id="countryDropdown" class="dropdown-list">
+            <div class="dropdown-item" data-value="Iran">Iran</div>
+            <div class="dropdown-item" data-value="China">China</div>
+            <div class="dropdown-item" data-value="India">India</div>
+            <div class="dropdown-item" data-value="Afghanistan">Afghanistan</div>
+            <div class="dropdown-item" data-value="Pakistan">Pakistan</div>
+        </div>
+    </div>
+    <div class="folium-map" id="map"></div>
+    <div id="info-container"></div>
+
+    <div class="slider-container">
+        <input type="range" id="dateSlider" min="0" max="275" step="1" />
+        <label for="dateSlider" id="dateLabel">Select Date</label>
+    </div>
+
+    <script>
+        var map = L.map("map", {
+            center: [30.1834, 66.9987],
+            zoom: 11,
+            zoomControl: true,
+            preferCanvas: false,
+        });
+
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        const searchInput = document.getElementById('searchInput');
+        const dropdown = document.getElementById('countryDropdown');
+        const items = dropdown.getElementsByClassName('dropdown-item');
+
+        searchInput.addEventListener('focus', function() {
+            dropdown.style.display = 'block';
+        });
+
+        searchInput.addEventListener('input', function() {
+            const filter = searchInput.value.toLowerCase();
+            Array.from(items).forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(filter) ? 'block' : 'none';
+            });
+        });
+
+        const dateSlider = document.getElementById('dateSlider');
+        const dateLabel = document.getElementById('dateLabel');
+
+        // Populate the slider with years and months
+        const dateMapping = [];
+        let index = 0;
+
+        for (let year = 2000; year <= 2022; year++) {
+            for (let month = 1; month <= 12; month++) {
+                const dateStr = `${year}-${month}`; // First day of the month
+                dateMapping[index++] = dateStr;
+            }
+        }
+
+        dateSlider.max = dateMapping.length - 1; // Set the max value for the slider
+
+        dateSlider.addEventListener('input', function() {
+            const selectedDate = dateMapping[dateSlider.value];
+            dateLabel.innerText = `Selected Date: ${selectedDate}`;
+            fetchCountryData(selectedDate); // Fetch data for the selected date
+        });
+
+        function fetchTileData(date) {
+            fetch(`/get_tile_data?date=${date}`) // Send the selected date to the backend
+                .then(response => response.json())
+                .then(data => {
+                    // Check if the data has an error
+                    // if (data.error) {
+                    //     alert(data.error);
+                    //     return;
+                    // }
+
+                    // // Remove previous tile layer
+                    // map.eachLayer(function (layer) {
+                    //     if (layer instanceof L.TileLayer) {
+                    //         map.removeLayer(layer);
+                    //     }
+                    // });
+
+                    // // Add a new tile layer based on the received data
+                    // const tileLayer = L.tileLayer(data.tileUrl, { // Assuming the backend returns a tile URL
+                    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    // });
+                    // tileLayer.addTo(map); // Add the new tile layer to the map
+
+                    // // Optionally adjust the map view
+                    // if (data.bounds) {
+                    //     map.fitBounds(data.bounds); // If bounds are provided, fit the map to those bounds
+                    // }
+                })
+                // .catch(error => console.error('Error fetching tile data:', error));
+        }
+
+        function fetchCountryBoundary(countryName) {
+        fetch(`/get_country_boundary?country=${countryName}`)
+            .then(response => response.json())
+            .then(data => {
+                // Clear any previous layers
+                map.eachLayer(function (layer) {
+                    if (layer instanceof L.GeoJSON) {
+                        map.removeLayer(layer);
+                    }
+                });
+
+                // Check if the data has an error
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+                
+                var countryLayer = L.geoJSON(data, {
+                style: function (feature) {
+                    return {
+                        color: "blue",
+                        fillColor: "lightblue",
+                        fillOpacity: 0.5,
+                        weight: 2
+                    };
+                }
+                }).addTo(map);
+        
+                map.fitBounds(L.geoJSON(data).getBounds());
+            })
+            .catch(error => console.error('Error fetching the country boundary:', error));
+        }
+
+        function fetchCountryData(countryName) {
+            fetch(`/get_country_stats?country=${countryName}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Check if the data has an error
+                    if (data.error) {
+                        alert(data.error);
+                        return;
+                    }
+
+                    // Clear any previous content in the info container
+                    var infoContainer = document.getElementById('info-container');
+                    infoContainer.innerHTML = ''; // Clear any previous data
+                    infoContainer.style.display = 'block'; // Show the container
+
+                    // Add the country data to the container
+                    var content = `
+                        <h4>Total max CO2 emission</h4>
+                        <p>${data.max} gC/m2/d</p>
+                    `;
+                    infoContainer.innerHTML = content;
+
+                    // Dynamically adjust the size of the container
+                    var contentHeight = infoContainer.scrollHeight;
+                    infoContainer.style.height = contentHeight + 'px';
+                    infoContainer.style.width = '300px';
+                })
+                .catch(error => console.error('Error fetching country data:', error));
+        }
+
+        Array.from(items).forEach(item => {
+            item.addEventListener('click', function() {
+                console.log("function called")
+                const selectedCountry = item.getAttribute('data-value');
+                fetchCountryBoundary(selectedCountry);
+                fetchCountryData(selectedCountry);
+                searchInput.value = item.textContent;
+                dropdown.style.display = 'none';
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown-container')) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

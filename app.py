@@ -60,27 +60,27 @@ collection_name = "odiac-ffco2-monthgrid-v2023"
 
 num_items = 276
 
-items = requests.get(f"{STAC_API_URL}/collections/{collection_name}/items?limit={num_items}").json()["features"]
-items = {item["properties"]["start_datetime"][:7]: item for item in items}
+# items = requests.get(f"{STAC_API_URL}/collections/{collection_name}/items?limit={num_items}").json()["features"]
+# items = {item["properties"]["start_datetime"][:7]: item for item in items}
 asset_name = "co2-emissions"
 
 
-rscl_vals = {"max":items[list(items.keys())[0]]["assets"][asset_name]["raster:bands"][0]["histogram"]["max"],
-                  "min":items[list(items.keys())[0]]["assets"][asset_name]["raster:bands"][0]["histogram"]["min"]}
+# rscl_vals = {"max":items[list(items.keys())[0]]["assets"][asset_name]["raster:bands"][0]["histogram"]["max"],
+#                   "min":items[list(items.keys())[0]]["assets"][asset_name]["raster:bands"][0]["histogram"]["min"]}
 
-color_map = "rainbow"
+# color_map = "rainbow"
 
-tile = requests.get(
-    f"{RASTER_API_URL}/collections/{items['2022-12']['collection']}/items/{items['2022-12']['id']}/tilejson.json?"
+# tile = requests.get(
+#     f"{RASTER_API_URL}/collections/{items['2022-12']['collection']}/items/{items['2022-12']['id']}/tilejson.json?"
 
-    f"&assets={asset_name}"
+#     f"&assets={asset_name}"
 
-    f"&color_formula=gamma+r+1.05&colormap_name={color_map}"
+#     f"&color_formula=gamma+r+1.05&colormap_name={color_map}"
 
-    f"&rescale={rscl_vals['min']},{rscl_vals['max']}", 
+#     f"&rescale={rscl_vals['min']},{rscl_vals['max']}", 
 
-# Return the response in JSON format
-).json()
+# # Return the response in JSON format
+# ).json()
 zoom = 11
 
 
@@ -100,22 +100,18 @@ items = requests.get(f"{STAC_API_URL}/collections/{collection_name}/items?limit=
 # stats = [generate_stats(item, countryjson) for item in items]
 stats = generate_stats(items[0], countryjson)
 
+print(stats['start_datetime'])
 
-print(stats)
+# quetta = (30.1834, 66.9987)
 
-e_offset = 0.18018
-n_offset = 0.108108
-quetta = (30.1834, 66.9987)
+# @app.route("/")
+# def index():
+    # map_ = Map(quetta, zoom_start=zoom)
+    #                 #   dragging=False,
+    #                 #   max_bounds=True,
+    #                 #   min_zoom=zoom,
+    #                 #   max_zoom=zoom)
 
-@app.route("/")
-def index():
-    map_ = Map(quetta, zoom_start=zoom)
-                    #   dragging=False,
-                    #   max_bounds=True,
-                    #   min_zoom=zoom,
-                    #   max_zoom=zoom)
-
-# Define the first map layer (January 2020)
     # co2_layer = TileLayer(
     #     tiles=tile["tiles"][0], # Path to retrieve the tile
     #     attr="GHG", # Set the attribution
@@ -125,22 +121,21 @@ def index():
     # )
     
 
-    # Add the country border as a polygon on the map
-    folium.GeoJson(
-        country,
-        style_function=lambda x: {
-            'fillColor': 'lightblue',
-            'color': 'blue',
-            'weight': 2,
-            'fillOpacity': 0.5,
-        }
-    ).add_to(map_)
+    # folium.GeoJson(
+    #     country,
+    #     style_function=lambda x: {
+    #         'fillColor': 'lightblue',
+    #         'color': 'blue',
+    #         'weight': 2,
+    #         'fillOpacity': 0.5,
+    #     }
+    # ).add_to(map_)
 
-    # co2_layer.add_to(map_)
+    # # co2_layer.add_to(map_)
 
 
-    map_.save("map.html")
-    return send_from_directory("", 'map.html')
+    # map_.save("map.html")
+    # return send_from_directory("", 'map.html')
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=8000)
